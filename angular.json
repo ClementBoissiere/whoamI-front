@@ -32,6 +32,10 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "whoami/src/"              ]
+            },
             "scripts": []
           },
           "configurations": {
