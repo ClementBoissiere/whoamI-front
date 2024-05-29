@@ -1,4 +1,6 @@
-<app-message-detail 
-    *ngFor="let message of messages"
-    [message]="message">
-</app-message-detail>
+<section class="container-flex messageList">
+    <app-message-detail *ngFor="let message of messages; let i = index" [message]="message"
+        [ngClass]="{'questions': i % 2 === 0, 'responses': i % 2 !== 0}">
+    </app-message-detail>
+    <input class="chatBox" id="name" type="text" placeholder="Asks questions :D" [formControl]="chatForm" (click)="sendMessage()" (keydown.enter)="sendMessage()">
+</section>

@@ -1,1 +1,23 @@
 @import './styles.scss';
+
+input {
+    background-color: #FEAE6F;
+    border-radius: 15px;
+    width: 80%;
+    right: 20px;
+    position: relative;
+    text-align: left;
+    border: 1px solid hsl(26, 97%, 66%);
+}
+
+.chat {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatBox {
+    position: fixed;
+    bottom: 0;
+    max-width: inherit;
+}

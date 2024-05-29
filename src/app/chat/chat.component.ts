@@ -39,7 +39,5 @@ export class ChatComponent implements OnInit, OnDestroy {
     });
     this.chatForm.setValue('');
   }
-
-  
 }
 

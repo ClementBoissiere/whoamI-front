@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 const key = "whoAmI";
+const keyDate = "whoAmIDate";
 
 @Injectable({
   providedIn: 'root'
@@ -45,5 +46,23 @@ export class LocalStorageService {
       return <Array<string>>JSON.parse(messages);
     }
     return [];
+  }
+
+  private setDate(): void {
+    const today = new Date();
+    localStorage.setItem(keyDate, today.toDateString());
+  }
+
+  public checkDateAndRemoveDatas(): void {
+    const memoryDateString = localStorage.getItem(keyDate);
+    if (!memoryDateString) {
+      this.setDate();
+      return;
+    }
+    const memoryDate = Date.parse(memoryDateString);
+    if (new Date().getDate() > memoryDate) {
+      this.removeData();
+      this.setDate();
+    }
   }
 }

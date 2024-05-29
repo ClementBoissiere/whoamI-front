@@ -1,5 +1,3 @@
-<section class=".container-flex">
-    <label for="name">Ask some questions: </label>
-    <input id="name" type="text" [formControl]="chatForm" (click)="sendMessage()" (keydown.enter)="sendMessage()">
+<section class=".container-flex chat">
     <app-message-list></app-message-list>
 </section>
