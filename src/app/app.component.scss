@@ -1,15 +1,14 @@
-@import '../styles.scss';
 .main {
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     max-width: 100%;
 }
 
 .chat {
-    width: 50%
+    width: 55%
 }
 
 .response {
-    width: 50%;
+    width: 45%;
 }

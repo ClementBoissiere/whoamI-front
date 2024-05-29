@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { LocalStorageService } from '../../common/local-storage.service';
 import { MessageDetailComponent } from '../message-detail/message-detail.component';
 import { Subscription } from 'rxjs';
@@ -13,6 +13,7 @@ import { CommonModule, NgFor, NgForOf } from '@angular/common';
 })
 export class MessageListComponent implements OnInit, OnDestroy {
 
+
   protected messages: Array<String> = [];
   private localStorageService = inject(LocalStorageService);
   private subscriptions: Array<Subscription> = [];
@@ -20,7 +21,9 @@ export class MessageListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.localStorageService.checkDateAndRemoveDatas();
     this.subscriptions.push(this.localStorageService.newData.subscribe({
-      next: (values) => this.messages = values
+      next: (values) => {
+        this.messages = values.reverse();
+      }
     }));
   }
 

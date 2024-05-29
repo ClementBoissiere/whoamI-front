@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './response.component.scss'
 })
 export class ResponseComponent {
+  
+  isWin: boolean = false;
 
 }

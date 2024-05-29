@@ -13,5 +13,7 @@ export class MessageDetailComponent {
   @Input()
   message: String = "";
 
+  @Input()
+  messageType: String = "";
 
 }

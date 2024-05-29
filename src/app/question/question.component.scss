@@ -1,0 +1,49 @@
+:host {
+    position: sticky;
+    margin-top: 2rem;
+    bottom: 2rem;
+    width: 100%;
+}
+
+.chatBox {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    background-color: #FEAE6F;
+    border-radius: 15px;
+    position: relative;
+    text-align: left;
+    border: 1px solid hsl(26, 97%, 66%);
+    width: 80%;
+    left: 4rem;
+}
+
+.inputText {
+    border: none;
+    background: none;
+    width: 100%;
+    font-size: 24px;
+    padding-left: 1rem;
+}
+
+.submit {
+    border-radius: 15%;
+    border: 1px solid #f5cd84;
+    background-color: #F6DCAC;
+    position: relative;
+    right: 0;
+    margin: 10px;
+}
+
+.submit:disabled {  
+    border: 1px solid lightgrey;
+    filter: grayscale(1);
+}
+
+img {
+    vertical-align: bottom;
+}
+
+input:focus-visible {
+    outline-offset: -100px;
+}

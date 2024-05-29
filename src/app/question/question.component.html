@@ -1,0 +1,6 @@
+<form [formGroup]="chatForm" class="chatBox">
+    <input class="inputText" id="name" type="text" placeholder="Asks questions :D" formControlName="chatQuestion"
+     (keydown.enter)="sendMessage()">
+    <button class="submit" type="submit" (ngSubmit)="sendMessage()" [disabled]="!chatForm.valid"><img src="../../assets/icons/send_24dp.svg"></button>
+</form>
+    

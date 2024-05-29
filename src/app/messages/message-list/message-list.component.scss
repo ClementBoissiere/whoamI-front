@@ -1,27 +1,30 @@
-@import '../../../styles.scss';
-
-.messageList {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+:host {
+    .messageList {
+        display: flex;
+        flex: 1 1 0;
+        flex-direction: column-reverse;
+        justify-content: center;
+        height: fit-content;
+        margin-bottom: 2rem;
+    }
 }
 
 .questions {
     background-color: #FEAE6F;
     border-radius: 15px;
     width: 80%;
-    right: 20px;
+    left: 4rem;
     position: relative;
-    text-align: left;
+    text-align: right;
     border: 1px solid hsl(26, 97%, 66%);
 }
 
 .responses {
+    display: flex;
+    align-items: center;
     background-color: #F6DCAC;
     border-radius: 15px;
     width: 80%;
-    left: 20px;
-    position: relative;
-    text-align: right;
+    text-align: left;
     border: 1px solid hsl(39, 83%, 75%);
 }
