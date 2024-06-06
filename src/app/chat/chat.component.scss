@@ -9,3 +9,13 @@
     padding-left: 5rem;
     max-height: 80vh;
 }
+
+*::-webkit-scrollbar {
+    background-color: #028391;
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #FEAE6F;
+    border-radius: 20px;
+  }

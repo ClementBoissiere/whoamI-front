@@ -59,10 +59,27 @@ export class LocalStorageService {
       this.setDate();
       return;
     }
-    const memoryDate = Date.parse(memoryDateString);
-    if (new Date().getDate() > memoryDate) {
+    const memoryDate = new Date(memoryDateString);
+    if (this.isNotSameDay(memoryDate)) {
       this.removeData();
       this.setDate();
     }
   }
+  
+  isNotSameDay(date: Date): boolean {
+    return !this.isSameDay(date);
+  }
+
+  isSameDay(date: Date): boolean {
+  
+    const currentDate = new Date();
+
+    return (
+      currentDate.getFullYear() === date.getFullYear() &&
+      currentDate.getMonth() === date.getMonth() &&
+      currentDate.getDate() === date.getDate()
+    );
+  }
+
+
 }

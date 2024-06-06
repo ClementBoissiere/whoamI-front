@@ -4,6 +4,7 @@ import { take } from 'rxjs';
 import { LocalStorageService } from '../common/local-storage.service';
 import { QuestionResponse } from './question.model';
 import { ChatService } from './question.service';
+import { ResponseService } from '../response/response.service';
 
 @Component({
   selector: 'app-question',
@@ -17,7 +18,9 @@ export class QuestionComponent {
   chatForm = new FormGroup({
     chatQuestion: new FormControl<String>('', Validators.required)
   });
+
   private chatService: ChatService = inject(ChatService);
+  private responseService: ResponseService = inject(ResponseService);
   private localStorageService: LocalStorageService = inject(LocalStorageService);
 
   ngOnInit(): void { }
@@ -33,7 +36,10 @@ export class QuestionComponent {
     this.chatService.sendMessage(question).pipe(take(1)).subscribe({
       next: (v: QuestionResponse) => {
         console.log("retour : " + v);
-        this.localStorageService.saveData(<string>v.response);
+        if (v.simpleResponse.includes("Gagné")|| v.simpleResponse ==="WIN") {
+          this.responseService.triggerWin();
+        }
+        this.localStorageService.saveData(<string>v.simpleResponse);
       },
       error: (e) => console.error(e)
     });

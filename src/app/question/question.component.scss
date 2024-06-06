@@ -28,16 +28,17 @@
 
 .submit {
     border-radius: 15%;
-    border: 1px solid #f5cd84;
-    background-color: #F6DCAC;
+    border: 1px solid transparent;
+    background-color: transparent;
     position: relative;
     right: 0;
     margin: 10px;
 }
 
 .submit:disabled {  
-    border: 1px solid lightgrey;
-    filter: grayscale(1);
+    img {
+        filter: invert(0%) sepia(100%) saturate(20%) hue-rotate(78deg) brightness(88%) contrast(100%);
+    }
 }
 
 img {
