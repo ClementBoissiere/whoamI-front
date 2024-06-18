@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { QuestionResponse } from '../question/question.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonalityService {
 
-  private baseUrl = "http://localhost:8080";
+  private baseUrl = environment.apiUrl;
   private http: HttpClient = inject(HttpClient);
   constructor() { }
 
