@@ -28,6 +28,10 @@ jobs:
       - name: Install dependencies
         run: npm install --registry=https://registry.npmjs.org/
 
+      - name: Display npm logs on failure
+        if: failure()
+        run: cat /home/runner/.npm/_logs/*-debug-*.log
+        
       - name: Build application
         run: npm run build -- --configuration production
         
